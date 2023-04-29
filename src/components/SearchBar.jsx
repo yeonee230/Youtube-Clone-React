@@ -1,34 +1,35 @@
 //2-2. Link to="라우터" 태그를 이용하면 라우팅 할 수 있다.
 
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ImYoutube } from "react-icons/im";
 
 export default function SearchBar() {
-  const [keyword, setKeyword] = useState();
+  const { keyword } = useParams();
+  const [text, setText] = useState();
   const navigate = useNavigate();
-  const handleChange = (e) => setKeyword(e.target.value);
+  const handleChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {
-    e.preventDefault(); // TODO:preventDefault 공부
-    setKeyword("");
-    navigate(`videos/${keyword}`);
+    e.preventDefault(); // TODO:preventDefault 공부 input부분 다시 강의 보기
+    // setKeyword("");
+    navigate(`videos/${text}`);
   };
+  useEffect(() => setText(keyword || ""), [keyword]);
   return (
-    <div>
+    <header>
       <Link to="/">
-        <a>
-          <ImYoutube /> Youtube
-        </a>
+        <ImYoutube />
+        <h1>Youtube</h1>
       </Link>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="...Search"
-          value={keyword}
+          value={text}
           onChange={handleChange}
         />
         <input type="submit" value="검색" />
       </form>
-    </div>
+    </header>
   );
 }
