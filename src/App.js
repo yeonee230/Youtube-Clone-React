@@ -5,6 +5,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { YoutubApiProvider } from "./context/YoutubeApiContext";
 
 export default function App() {
   // Create a client
@@ -14,9 +15,11 @@ export default function App() {
     <div>
     <SearchBar />
     {/* // Provide the client to your App */}
+    <YoutubApiProvider>
     <QueryClientProvider client={queryClient}>
     <Outlet />
     </QueryClientProvider>
+    </YoutubApiProvider>
   </div>
   );
 }
