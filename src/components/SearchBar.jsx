@@ -22,15 +22,15 @@ export default function SearchBar() {
         <ImYoutube className="text-4xl text-brand" />
         <h1 className="text-2xl font-bold ml-2 ">Youtube</h1>
       </Link>
-      <form className="w-full flex justify-center border-solid border-1 border-zinc-500" onSubmit={handleSubmit}>
+      <form className="w-full flex justify-center " onSubmit={handleSubmit}>
         <input
-          className="w-7/12 p-2 px-6 outline-none bg-black text-gray-50 rounded-l-3xl text-lg "
+          className="w-7/12 p-2 px-6 outline-none bg-black text-gray-50 rounded-l-3xl text-lg border-solid border-myGray2 border-2 "
           type="text"
           placeholder="Search"
           value={text}
           onChange={handleChange}
         />
-        <button className="bg-zinc-800 px-4 rounded-r-3xl border-solid ">
+        <button className="bg-myGray px-4 rounded-r-3xl border-solid border-myGray2 border-2 ">
           <BiSearch />
         </button>
       </form>
