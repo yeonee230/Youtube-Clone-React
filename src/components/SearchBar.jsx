@@ -19,7 +19,7 @@ export default function SearchBar() {
     <header>
       <Link to="/">
         <ImYoutube />
-        <h1>Youtube</h1>
+        <h1 className="text-2xl">Youtube</h1>
       </Link>
       <form onSubmit={handleSubmit}>
         <input
