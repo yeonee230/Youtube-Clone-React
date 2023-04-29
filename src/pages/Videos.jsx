@@ -9,6 +9,7 @@ import { useYoutubApi } from "../context/YoutubeApiContext";
 export default function Videos() {
   const { keyword } = useParams();
   const { youtube } = useYoutubApi();
+
   const {
     isLoading,
     error,
@@ -18,11 +19,11 @@ export default function Videos() {
   });
   return (
     <>
-      <h1>Videos{keyword ? `🔍 : ${keyword}` : "🔥"}</h1>
+      {/* <h1>Videos{keyword ? `🔍 : ${keyword}` : "🔥"}</h1> */}
       {isLoading && <p>로딩중...</p>}
       {error && <h1>ERROR!!!</h1>}
       {videos && (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-4">
+        <ul className="p-5 px-32 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4 gap-y-10">
           {videos.map((video) => (
             <VideoCard key={video.id} video={video} />
           ))}
