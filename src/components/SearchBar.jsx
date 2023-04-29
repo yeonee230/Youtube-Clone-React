@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { ImYoutube } from "react-icons/im";
+import { BiSearch } from "react-icons/bi";
 
 export default function SearchBar() {
   const { keyword } = useParams();
@@ -16,19 +17,22 @@ export default function SearchBar() {
   };
   useEffect(() => setText(keyword || ""), [keyword]);
   return (
-    <header>
-      <Link to="/">
-        <ImYoutube />
-        <h1 className="text-2xl">Youtube</h1>
+    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4">
+      <Link to="/" className="flex items-center ml-5">
+        <ImYoutube className="text-4xl text-brand" />
+        <h1 className="text-2xl font-bold ml-2 ">Youtube</h1>
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form className="w-full flex justify-center border-solid border-1 border-zinc-500" onSubmit={handleSubmit}>
         <input
+          className="w-7/12 p-2 px-6 outline-none bg-black text-gray-50 rounded-l-3xl text-lg "
           type="text"
-          placeholder="...Search"
+          placeholder="Search"
           value={text}
           onChange={handleChange}
         />
-        <input type="submit" value="검색" />
+        <button className="bg-zinc-800 px-4 rounded-r-3xl border-solid ">
+          <BiSearch />
+        </button>
       </form>
     </header>
   );
