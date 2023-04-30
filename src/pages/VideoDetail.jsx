@@ -13,7 +13,7 @@ export default function VideoDetail() {
 
   return (
     <section className="flex flex-col lg:flex-row">
-      <article className="basis-4/6">
+      <article className="basis-4/6 px-8 pt-3">
         <div className="relative pt-[56%] w-full h-0">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
@@ -26,7 +26,7 @@ export default function VideoDetail() {
             frameborder="0"
           />
         </div>
-        <div className="p-8">
+        <div className="py-8">
           <h2 className="font-bold text-xl">{title}</h2>
           <ChannelInfo id={channelId} name={channelTitle} />
           <div className="bg-myGrayDes p-3 rounded-lg ">
