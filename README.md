@@ -4,8 +4,7 @@
 YoutubeAPI를 이용한 Youtube Clone 사이트 입니다. 
 
 ## 홈페이지
-https://644e9966e5465600082539d4--superb-quokka-46e1b4.netlify.app/
-
+https://superb-quokka-46e1b4.netlify.app/
 ## 개발 목표
 * React-Router 이용해 페이지 url 별로 라우팅하기 
 * React-Query 이용해 상태관리하기
