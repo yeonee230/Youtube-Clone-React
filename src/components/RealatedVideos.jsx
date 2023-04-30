@@ -19,7 +19,7 @@ export default function RealatedVideos({ id }) {
       {videos && (
         <ul className="">
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} type="list" />
           ))}
         </ul>
       )}

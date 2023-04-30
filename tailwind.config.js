@@ -8,6 +8,7 @@ module.exports = {
         background:"#0F0F0F",
         myGray:"#222222",
         myGray2:"#303030",
+        myGrayDes:"#272727"
       },
     },
   },

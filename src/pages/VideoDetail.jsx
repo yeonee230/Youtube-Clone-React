@@ -8,30 +8,34 @@ export default function VideoDetail() {
   const {
     state: { video },
   } = useLocation();
-  const { title, channelTitle, publishedAt, description,channelId } = video.snippet;
+  const { title, channelTitle, publishedAt, description, channelId } =
+    video.snippet;
 
   return (
-    <section>
-      <article>
-      <iframe
-        title="youtube-video"
-        id="player"
-        type="text/html"
-        width="100%"
-        height="640"
-        src={`http://www.youtube.com/embed/${video.id}`}
-        frameborder="0"
-      />
-      <div>
-        <h2>{title}</h2>
-        <ChannelInfo id={channelId} name={channelTitle}/>
-        <pre>{description}</pre>
-        <p>{formatAgo(publishedAt, "ko")}</p>
-      </div>
+    <section className="flex flex-col lg:flex-row">
+      <article className="basis-4/6">
+        <iframe
+          className="px-8 pt-4"
+          title={title}
+          id="player"
+          type="text/html"
+          width="100%"
+          height="600"
+          src={`http://www.youtube.com/embed/${video.id}`}
+          frameborder="0"
+        />
+        <div className="p-8">
+          <h2 className="font-bold text-xl">{title}</h2>
+          <ChannelInfo id={channelId} name={channelTitle} />
+          <div className="bg-myGrayDes p-3 rounded-lg ">
+            <p className="font-bold mb-3">{formatAgo(publishedAt, "ko")}</p>
+            <pre className="whitespace-pre-wrap">{description}</pre>
+          </div>
+        </div>
       </article>
-    <article>
-      <RealatedVideos id={video.id} />
-    </article>
+      <article className="basis-2/6">
+        <RealatedVideos id={video.id} />
+      </article>
     </section>
   );
 }
