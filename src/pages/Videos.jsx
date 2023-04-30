@@ -14,7 +14,7 @@ export default function Videos() {
     data: videos,
   } = useQuery(["videos", keyword], () => {
     return youtube.search(keyword);
-  });
+  },{ staleTime: 1000 * 60 * 1 });
   return (
     <>
       {/* <h1>Videos{keyword ? `🔍 : ${keyword}` : "🔥"}</h1> */}

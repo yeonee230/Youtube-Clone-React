@@ -11,7 +11,7 @@ export default function RealatedVideos({ id }) {
     data: videos,
   } = useQuery(["related", id], () => {
     return youtube.search(id);
-  });
+  },{ staleTime: 1000 * 60 * 5 });
   return (
     <div>
       {isLoading && <p>로딩중...</p>}
