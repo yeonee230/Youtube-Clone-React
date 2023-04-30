@@ -1,8 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import FakeYoutube from "../api/fakeYoutube";
-import Youtube from "../api/youtube";
 import VideoCard from "../components/VideoCard";
 import { useYoutubApi } from "../context/YoutubeApiContext";
 
